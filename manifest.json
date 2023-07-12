@@ -1,0 +1,45 @@
+{
+    "manifest_version":3,
+    "name": "show your ability",
+    "version": "0.0.1",
+    "description": "展示开发者的各项能力",
+    "author": "chenmo",
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://github.com/*"],
+            "js": ["content-script.js"],
+            "css": ["insert-css.css"]
+            
+        }
+    ],
+    "options_ui": {
+        "page": "options.html",
+        "open_in_tab": true
+    },
+    "host_permissions": [
+        "https://*/*"
+    ],
+    "permissions": [
+        "scripting"
+    ],
+    "action": {
+        "default_icon": {
+            "16": "img/icon.png",
+            "32": "img/icon.png",
+            "48": "img/icon.png",
+            "64": "img/icon.png",
+            "128": "img/icon.png"
+        },
+        "default_popup": "popup.html"
+    },
+    "icons": {
+        "16": "img/icon.png",
+        "32": "img/icon.png",
+        "48": "img/icon.png",
+        "64": "img/icon.png",
+        "128": "img/icon.png"
+    }
+}
